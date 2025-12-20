@@ -1,0 +1,8 @@
+{
+  "name": "Dr. Matheus Machado Rech - AI-Powered Portfolio",
+  "description": "A high-end, interactive CV for Dr. Matheus Machado Rech, M.D., featuring an integrated AI assistant to query research, experience, and clinical expertise.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

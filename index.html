@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Matheus Machado Rech | Academic Dossier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Shim process for modules that expect it to exist
+      window.process = window.process || { env: {} };
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); }
+        .scroll-smooth { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        @keyframes fadeIn {
+          from { opacity: 0; transform: scale(0.95); }
+          to { opacity: 1; transform: scale(1); }
+        }
+        .animate-fade-in { animation: fadeIn 0.2s ease-out forwards; }
+
+        /* Print styles - Formal Academic CV */
+        /* Using both .print-mode class AND @media print for maximum compatibility */
+        body.print-mode header,
+        body.print-mode .sidebar-panel,
+        body.print-mode .chat-assistant,
+        body.print-mode button,
+        body.print-mode i.fas,
+        body.print-mode i.fab,
+        body.print-mode i.fa,
+        body.print-mode [class*="fa-"] {
+          display: none !important;
+          visibility: hidden !important;
+        }
+
+        body.print-mode {
+          background: white !important;
+          font-family: 'Times New Roman', Times, Georgia, serif !important;
+        }
+
+        body.print-mode main {
+          padding: 0 !important;
+          max-width: 100% !important;
+        }
+
+        body.print-mode .cv-container {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        body.print-mode .cv-container > div {
+          box-shadow: none !important;
+          border: none !important;
+          border-radius: 0 !important;
+          padding: 1in !important;
+          background: white !important;
+        }
+
+        body.print-mode * {
+          color: black !important;
+          background-color: transparent !important;
+          box-shadow: none !important;
+          border-radius: 0 !important;
+        }
+
+        body.print-mode h2 {
+          border-bottom: 1px solid black !important;
+        }
+
+        body.print-mode a {
+          text-decoration: none !important;
+        }
+
+        /* Hide featured selection badges */
+        body.print-mode span[class*="bg-red"],
+        body.print-mode span[class*="Featured"],
+        body.print-mode span[class*="uppercase"][class*="tracking"] {
+          display: none !important;
+        }
+
+        /* Hide star buttons for highlighting */
+        body.print-mode button[title*="Highlight"],
+        body.print-mode button[title*="Featured"] {
+          display: none !important;
+        }
+
+        /* Clean up publication entry borders */
+        body.print-mode div[class*="border-l"] {
+          border-left: none !important;
+          padding-left: 2em !important;
+        }
+
+        /* Hide "Impact:" statements under publications */
+        body.print-mode p[class*="italic"][class*="text-slate"] {
+          display: none !important;
+        }
+
+        /* Hide inline type tags [Peer-Reviewed], [Accepted], etc. */
+        body.print-mode .pub-type-tag {
+          display: none !important;
+        }
+
+        /* Simplify header - left align for Harvard */
+        body.print-mode .cv-container > div > div.text-center {
+          text-align: left !important;
+          margin-bottom: 1em !important;
+          padding-bottom: 0.5em !important;
+          border-bottom: 1px solid black !important;
+        }
+
+        body.print-mode .cv-container > div > div.text-center * {
+          text-align: left !important;
+          justify-content: flex-start !important;
+        }
+
+        body.print-mode .cv-container > div > div.text-center h1 {
+          font-size: 14pt !important;
+          letter-spacing: 0 !important;
+          margin-bottom: 4pt !important;
+        }
+
+        body.print-mode .cv-container > div > div.text-center p,
+        body.print-mode .cv-container > div > div.text-center span {
+          font-size: 10pt !important;
+          margin: 2pt 0 !important;
+          display: block !important;
+        }
+
+        body.print-mode .cv-container > div > div.text-center .flex {
+          display: block !important;
+        }
+
+        @media print {
+          /* HIDE: Header bar at top */
+          body > div > header,
+          header.sticky,
+          header.top-0,
+          header[class*="sticky"],
+          header[class*="bg-white"] {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            overflow: hidden !important;
+          }
+
+          /* HIDE: Sidebar panel */
+          .sidebar-panel,
+          div.sidebar-panel,
+          div[class*="xl:w-80"],
+          div[class*="lg:sticky"][class*="lg:top-36"] {
+            display: none !important;
+            visibility: hidden !important;
+          }
+
+          /* HIDE: Chat assistant */
+          .chat-assistant,
+          div.chat-assistant,
+          div[class*="fixed"][class*="bottom-6"],
+          div[class*="fixed"][class*="bottom-24"] {
+            display: none !important;
+            visibility: hidden !important;
+          }
+
+          /* HIDE: All buttons */
+          button {
+            display: none !important;
+          }
+
+          /* HIDE: All FontAwesome icons */
+          i[class*="fa-"],
+          i.fas,
+          i.fab,
+          i.fa,
+          .fas,
+          .fab,
+          .fa {
+            display: none !important;
+            visibility: hidden !important;
+            width: 0 !important;
+            height: 0 !important;
+          }
+
+          /* Reset body */
+          body {
+            background: white !important;
+            font-family: 'Times New Roman', Times, Georgia, serif !important;
+            font-size: 11pt !important;
+            line-height: 1.5 !important;
+            color: black !important;
+          }
+
+          /* Reset main container */
+          main {
+            padding: 0 !important;
+            margin: 0 !important;
+            max-width: 100% !important;
+          }
+
+          main > div {
+            display: block !important;
+            padding: 0 !important;
+            gap: 0 !important;
+          }
+
+          /* CV container styles */
+          .cv-container {
+            display: block !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+          }
+
+          .cv-container > div {
+            padding: 0.4in 0.6in !important;
+            margin: 0 !important;
+            max-width: 100% !important;
+            background: white !important;
+            box-shadow: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+          }
+
+          /* FORCE all text to black */
+          *, *::before, *::after {
+            color: black !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+          }
+
+          /* Remove ALL background colors */
+          *, *::before, *::after {
+            background-color: transparent !important;
+            background-image: none !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+            border-radius: 0 !important;
+          }
+
+          /* Keep only border-bottom for section headers */
+          h2 {
+            font-size: 12pt !important;
+            font-weight: bold !important;
+            text-transform: uppercase !important;
+            border-bottom: 1px solid black !important;
+            border-top: none !important;
+            border-left: none !important;
+            border-right: none !important;
+            margin-top: 14pt !important;
+            margin-bottom: 8pt !important;
+            padding-bottom: 3pt !important;
+          }
+
+          h1 {
+            font-size: 16pt !important;
+            font-weight: bold !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            margin-bottom: 6pt !important;
+          }
+
+          h3 {
+            font-size: 11pt !important;
+            font-weight: bold !important;
+          }
+
+          /* Links - plain black */
+          a, a:visited, a:hover {
+            color: black !important;
+            text-decoration: none !important;
+          }
+
+          /* DOI links keep underline */
+          a[href*="doi.org"] {
+            text-decoration: underline !important;
+          }
+
+          /* Lists */
+          ul {
+            list-style-type: disc !important;
+            margin-left: 18pt !important;
+            padding-left: 0 !important;
+          }
+
+          li {
+            margin-bottom: 3pt !important;
+          }
+
+          /* Remove left borders/decorations from publication entries */
+          div[class*="border-l"] {
+            border-left: none !important;
+            padding-left: 0 !important;
+            margin-left: 0 !important;
+          }
+
+          /* Page breaks */
+          section {
+            page-break-inside: avoid;
+          }
+
+          h2, h3 {
+            page-break-after: avoid;
+          }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "@google/genai": "https://esm.sh/@google/genai@1.34.0",
+    "pdfjs-dist": "https://esm.sh/pdfjs-dist@4.10.38",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-slate-50 text-slate-900 scroll-smooth">
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
